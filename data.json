@@ -1,0 +1,22 @@
+{
+    "contacts": [
+        {
+            "name": "NTR",
+            "tags": ["Actor", "Angry young man", "real hero"]
+        },
+        {
+            "name": "CB Naidu",
+            "tags": ["Politician", "daring person", "Visionary"]
+        }
+    ],
+    "conversations": {
+        "NTR": [
+            {
+                "datetime": "2025-08-01 10:00:00",
+                "sender": "NTR",
+                "text": "Hi Roopesh, I want to join your GenAI course"
+            }
+
+        ]
+    }
+}
