@@ -9,10 +9,23 @@ def load_conversation(filename):
         return json.load(f)
 
 def add_conversation(data, contact, text, sender, datetime ):
+
+    node = data["conversations"][contact]
+    node.append(
+        {
+        "text": text,
+        "sender": sender,
+        "datetime": datetime
+    }
+    )
+    
+
+    """
     data.append({
         "contact": contact,
         "text": text,
         "sender": sender,
         "datetime": datetime
     })
+    """
 
