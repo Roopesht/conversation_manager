@@ -19,13 +19,3 @@ def add_conversation(data, contact, text, sender, datetime ):
     }
     )
     
-
-    """
-    data.append({
-        "contact": contact,
-        "text": text,
-        "sender": sender,
-        "datetime": datetime
-    })
-    """
-
