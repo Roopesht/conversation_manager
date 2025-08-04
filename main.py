@@ -1,5 +1,6 @@
 from utils import add_conversation
 from utils import load_conversation, save_conversation, add_conversation
+from openai_util import get_next_message
 selected_person_node = None
 def show_menu():
     global selected_person_node
@@ -7,6 +8,7 @@ def show_menu():
     print("1. Select people")
     print ("2. Show conversation:")
     print ("3. Add conversation:")
+    print ("4. What should be the response")
 
 def show_people(data):
     global selected_person_node
@@ -34,6 +36,10 @@ def add_conversation_method(data):
     datetime = "now"
     add_conversation(data, "NTR", text, sender, datetime)
     save_conversation(data, "data.json")
+
+def get_response (node):
+    message = get_next_message(node)
+    add_conversation(data, "MTR", message, "me", "now")
 
 def main ():
     data = load_conversation("data.json")
