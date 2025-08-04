@@ -2,6 +2,7 @@ from utils import add_conversation
 from utils import load_conversation, save_conversation, add_conversation
 from openai_util import get_next_message
 selected_person_node = None
+
 def show_menu():
     global selected_person_node
     print("Main menu:")
