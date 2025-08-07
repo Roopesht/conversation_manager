@@ -4,7 +4,6 @@ from openai_util import get_next_message
 selected_person_node = None
 
 def show_menu():
-    global selected_person_node
     print("Main menu:")
     print("1. Select people")
     print ("2. Show conversation:")
@@ -14,8 +13,12 @@ def show_menu():
 def show_people(data):
     global selected_person_node
     print("People:")
+
+    # Show the list of people
     for i, person in enumerate(data["contacts"]):
         print(f"{i+1}. {person}")
+
+    # Ask the user to select the person by typing the name
     name = input ("select the person by entering the name: ")
     if name in data['conversations']:
         selected_person_node = data['conversations'][name]
