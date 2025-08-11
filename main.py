@@ -1,6 +1,7 @@
 from utils import add_conversation
 from utils import load_conversation, save_conversation, add_conversation
 from openai_util import get_next_message
+from perplexity import get_perplexity_response
 selected_person_node = None
 
 def show_menu():
@@ -43,7 +44,20 @@ def add_conversation_method(data):
 
 def get_response (node):
     message = get_next_message(node)
-    add_conversation(data, "MTR", message, "me", "now")
+    conv = '\n'.join ([ f"{d['sender']} says `{d['text']}`"  for d in node ])
+    #print (conv)
+    system_msg = 'Your name is Roopesh, You are the owner of "Ojasa Mirai" a online Technical Training school. You need to respond to users'
+    user_msg = f'below is the conversation so far, please suggest the next dialogue from "Roopesh"\n conversation: {conv}'
+    #print ("System msg: ", system_msg)
+    #print ("user msg:  ", user_msg)
+    resp = get_perplexity_response(system_msg,user_msg)
+    print ("\n\n", resp)
+
+
+
+
+[{'datetime': '2025-08-01 10:00:00', 'sender': 'NTR', 'text': 'Hi Roopesh, I want to join your GenAI course'}, 
+{'text': 'That is agreat choice.', 'sender': 'me', 'datetime': 'now'}]
 
 def main ():
     data = load_conversation("data.json")
@@ -57,6 +71,8 @@ def main ():
         elif choice == "3":
             add_conversation_method(data)
         elif choice == "4":
+            get_response(selected_person_node)
+        elif choice == "5":
             break
         else:
             print("Invalid choice. Please try again.")

@@ -1,22 +1,58 @@
 {
-    "contacts": [
-        {
-            "name": "NTR",
-            "tags": ["Actor", "Angry young man", "real hero"]
-        },
-        {
-            "name": "CB Naidu",
-            "tags": ["Politician", "daring person", "Visionary"]
-        }
-    ],
-    "conversations": {
-        "NTR": [
-            {
-                "datetime": "2025-08-01 10:00:00",
-                "sender": "NTR",
-                "text": "Hi Roopesh, I want to join your GenAI course"
-            }
-
-        ]
+  "contacts": [
+    {
+      "name": "NTR",
+      "tags": [
+        "Actor",
+        "Angry young man",
+        "real hero"
+      ]
+    },
+    {
+      "name": "CB Naidu",
+      "tags": [
+        "Politician",
+        "daring person",
+        "Visionary"
+      ]
+    },
+    {
+      "name": "Chandrahas",
+      "tags": [
+        "GenAI Student",
+        "Daring person"
+      ]
     }
+  ],
+  "conversations": {
+    "NTR": [
+      {
+        "datetime": "2025-08-01 10:00:00",
+        "sender": "NTR",
+        "text": "Hi Roopesh, I want to join your GenAI course"
+      },
+      {
+        "text": "That is agreat choice.",
+        "sender": "me",
+        "datetime": "now"
+      }
+    ],
+    "Chandrahas": [
+      {
+        "datetime": "2025-08-07 11:30:00",
+        "sender": "Chandrahas",
+        "text": "Hello sir"
+      },
+      {
+        "datetime": "2025-08-07 11:31:00",
+        "sender": "me",
+        "text": "Hi Chandrahas! \n I’m running a book stall and wanted to check in—what kind of books do you enjoy reading? 😊\nWould love to help you find something you’ll love!"
+      },
+      {
+        "datetime": "2025-08-07 11:32:00",
+        "sender": "Chandrahas",
+        "text": "Autobiography of apj abdul kalam"
+      }
+    ]
+  }
 }
