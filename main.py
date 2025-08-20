@@ -2,7 +2,7 @@ from utils import add_conversation
 from utils import load_conversation, save_conversation, add_conversation
 from openai_util import get_next_message
 from perplexity import get_perplexity_response
-selected_person_node = None
+selected_person = ""
 
 def show_menu():
     print("Main menu:")
@@ -12,7 +12,7 @@ def show_menu():
     print ("4. What should be the response")
 
 def show_people(data):
-    global selected_person_node
+    global selected_person
     print("People:")
 
     # Show the list of people
@@ -22,24 +22,25 @@ def show_people(data):
     # Ask the user to select the person by typing the name
     name = input ("select the person by entering the name: ")
     if name in data['conversations']:
-        selected_person_node = data['conversations'][name]
+        selected_person = name
     else:
         print ("you entered wrong name")
 
 def show_conversation(data):
-    global selected_person_node
+    global selected_person
     print("Conversation:")
-    for conversation in selected_person_node:
+    node =  data["conversations"][selected_person]
+    for conversation in node:
         print (conversation)
         #print(f" {conversation['text']} ({conversation['sender']})")
 
 def add_conversation_method(data):
-    global selected_person_node
+    global selected_person
     print("Add conversation:")
     text = input("Enter the text: ")
     sender = input("Enter the sender: ")
     datetime = "now"
-    add_conversation(data, "NTR", text, sender, datetime)
+    add_conversation(data, selected_person, text, sender, datetime)
     save_conversation(data, "data.json")
 
 def get_response (node):
