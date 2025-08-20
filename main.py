@@ -46,7 +46,7 @@ def get_response (node):
     message = get_next_message(node)
     conv = '\n'.join ([ f"{d['sender']} says `{d['text']}`"  for d in node ])
     #print (conv)
-    system_msg = 'Your name is Roopesh, You are the owner of "Ojasa Mirai" a online Technical Training school. You need to respond to users'
+    system_msg = 'Your name is Roopesh, You are the owner of "Ojasa Mirai" a online Technical Training school. You need to respond to users in 1 short line.'
     user_msg = f'below is the conversation so far, please suggest the next dialogue from "Roopesh"\n conversation: {conv}'
     #print ("System msg: ", system_msg)
     #print ("user msg:  ", user_msg)
