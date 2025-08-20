@@ -11,3 +11,6 @@ The above message has to be tagged as Toxic
 3. Construct a prompt  to detect the toxicity in side the message
 4. Call the LLM API (providing the prompt)
 5. If the LLM responds true, then respond to the contact, saying "The message is toxic, you are not appreciating it politely"
+
+## How to find if it Toxic
+Check if its toxic, do not complain if its mildly toxic: {msg}

@@ -6,8 +6,10 @@ I want to send a message: "There is a requirement drive in TCS on 29-Aug for Qua
 ## How to implement
 1. Accept Target Tag (All mean to everyone)
 2. ACcept the Message
-3. Rephrase the message provided by User.
+3. Rephrase the message provided by User. (by calling LLM API)
 4. Send to all the people with that Tag (Add the message to the conversation)
 
 
+## How to rephrase on LLM
+Rephrase this to look friendly: {msg}
 
