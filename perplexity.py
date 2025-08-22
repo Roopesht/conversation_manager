@@ -5,19 +5,8 @@ load_dotenv()
 
 api_key  = os.getenv("PERPLEXITY_API_KEY", "")
 
-def get_perplexity_response(system_message: str, user_message: str) -> str:
-    """
-    Calls the Perplexity API with system and user messages.
-    
-    Args:
-        system_message (str): The system instruction for the model.
-        user_message (str): The user input/question.
-        api_key (str): Your Perplexity API key.
+def get_response(system_message: str, user_message: str) -> str:
 
-    Returns:
-        str: The content from the model's response.
-    """
-    
     url = "https://api.perplexity.ai/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -40,11 +29,11 @@ def get_perplexity_response(system_message: str, user_message: str) -> str:
 
 # Example usage:
 if __name__ == "__main__":
-    system_msg = "You are riddle solver, crack the riddles and provide just the answer"
-    user_msg = "I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?"
+    system_msg = "You are Roopesh, the Manager at ojasa Mirai, a online gen AI training company. You will respond to incoming messages in short and to the point when candidates approaches you for GenAI."
+    user_msg = " Hi Roopesh, I am beginner, how long does it take to learn GenAI completely including architecture"
 
     try:
-        content = get_perplexity_response(system_msg, user_msg)
+        content = get_response(system_msg, user_msg)
         print("Model Response:", content)
     except requests.exceptions.RequestException as e:
         print("Error calling Perplexity API:", e)

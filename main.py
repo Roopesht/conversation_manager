@@ -1,7 +1,7 @@
 from utils import add_conversation
 from utils import load_conversation, save_conversation, add_conversation
 from openai_util import get_next_message
-from perplexity import get_perplexity_response
+from perplexity import get_response
 selected_person = ""
 
 def show_menu():
@@ -51,7 +51,7 @@ def get_response (node):
     user_msg = f'below is the conversation so far, please suggest the next dialogue from "Roopesh"\n conversation: {conv}'
     #print ("System msg: ", system_msg)
     #print ("user msg:  ", user_msg)
-    resp = get_perplexity_response(system_msg,user_msg)
+    resp = get_response(system_msg,user_msg)
     print ("\n\n", resp)
 
 
